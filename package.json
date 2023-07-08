@@ -5,7 +5,7 @@
     "main": "./index.js",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ArSrNa/React-GenshinIcon.git"
+        "url": "git+https://github.com/ArSrNa/React-GenshinProgress.git"
     },
     "keywords": [
         "Genshin Impact",
@@ -15,7 +15,7 @@
     "author": "ArSrNa",
     "license": "GNU",
     "bugs": {
-        "url": "https://github.com/ArSrNa/React-GenshinIcon/issues"
+        "url": "https://github.com/ArSrNa/React-GenshinProgress/issues"
     },
-    "homepage": "https://github.com/ArSrNa/React-GenshinIcon#readme"
+    "homepage": "https://github.com/ArSrNa/React-GenshinProgress#readme"
 }
