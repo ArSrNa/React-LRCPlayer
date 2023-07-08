@@ -1,0 +1,21 @@
+{
+    "name": "react-genshinicon",
+    "version": "1.0.0",
+    "description": "React-原神进度条",
+    "main": "./index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ArSrNa/React-GenshinIcon.git"
+    },
+    "keywords": [
+        "Genshin Impact",
+        "icon",
+        "React"
+    ],
+    "author": "ArSrNa",
+    "license": "GNU",
+    "bugs": {
+        "url": "https://github.com/ArSrNa/React-GenshinIcon/issues"
+    },
+    "homepage": "https://github.com/ArSrNa/React-GenshinIcon#readme"
+}
