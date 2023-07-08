@@ -1,5 +1,5 @@
 {
-    "name": "react-genshinicon",
+    "name": "react-genshin-progress",
     "version": "1.0.0",
     "description": "React-原神进度条",
     "main": "./index.js",

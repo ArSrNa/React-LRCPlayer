@@ -96,12 +96,12 @@ const LoadDone = () => (<div style={{ display: 'flex' }}>
     <Cryo color="#444" />
     <Geo color="#444" /></div>)
 
-export function GIProgress({ num, width }) {
+export function GIProgress({ num, width, backgroundStyle, progressStyle }) {
 
     return (
         <div>
-            <div style={{ zIndex: 0, position: 'absolute', width, overflow: "hidden" }}><Def /></div>
-            <div style={{ zIndex: 1, position: 'relative', width, clipPath: `inset(0px ${100 - num}% 0px 0px)`, transition: 'clip-path .5s' }}><LoadDone /></div>
+            <div style={{ ...backgroundStyle, zIndex: 0, position: 'absolute', width, overflow: "hidden" }}><Def /></div>
+            <div style={{ ...progressStyle, zIndex: 1, position: 'relative', width, clipPath: `inset(0px ${100 - num}% 0px 0px)`, transition: 'clip-path .5s' }}><LoadDone /></div>
         </div>
     )
 }
