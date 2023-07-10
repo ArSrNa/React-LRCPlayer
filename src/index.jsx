@@ -110,7 +110,7 @@ export function GIProgress({ num, width, backgroundStyle, progressStyle }) {
     return (
         <div>
             <div style={{ ...backgroundStyle, zIndex: 0, position: 'absolute', width, overflow: "hidden" }}><Def /></div>
-            <div style={{ ...progressStyle, zIndex: 1, position: 'relative', width, clipPath: `inset(0px ${100 - num}% 0px 0px)`, transition: 'clip-path .5s' }}><LoadDone /></div>
+            <div style={{ ...progressStyle, zIndex: 1, position: 'relative', width, clipPath: `inset(0px ${100 - num}% 0px 0px)` }}><LoadDone /></div>
         </div>
     )
 }

@@ -6,7 +6,6 @@
 
 本项目基于React开发，仅在React测试通过。
 
-
 # 用法
 
 ## 安装
@@ -45,6 +44,7 @@ import { GIProgress } from 'react-genshin-progress';
 此参数表示进度条的进度，范围 [0,100] ，数值为 `93` 正好卡半岩
 
 如果需要动态改变，需要使用 react useState()
+
 ```jsx
 import { useState } from 'react';
 import { GIProgress } from 'react-genshin-progress';
@@ -64,9 +64,11 @@ export default App;
 ## width
 
 此参数用于定义宽度，传入 `number` 时表示px，例如
+
 ````jsx
 <GIProgress width={600} />
 ````
+
 表示这个进度条的宽度为600px
 
 由于进度条本身的 `position: absolute` 直接设置百分比可能没有效果，建议使用绝对宽度。
@@ -76,6 +78,7 @@ export default App;
 这两个都是用来定义整个进度条的前景背景样式，由于进度条已内置以下属性：
 
 进度条背景
+
 ````js
 {
     zIndex: 0,
@@ -85,13 +88,24 @@ export default App;
 ````
 
 进度条前景
+
 ````js
 {
      zIndex: 1,
      position: 'relative',
-     clipPath: `inset(0px ${100 - num}% 0px 0px)`,
-     transition: 'clip-path .5s'
+     clipPath: `inset(0px ${100 - num}% 0px 0px)`
 }
 ````
 
 直接更改可能会覆盖本身属性，从而失去本身效果
+
+# 常见问题
+
+## Unexpected Token <
+
+这是因为babel编译未成功的错误，在1.2.0版本完全修复
+
+
+## React is not define
+
+dependency 默认会安装React，如果没有安装，请手动 `npm i react`，并 `import React from 'react';`
