@@ -1,6 +1,6 @@
 {
   "name": "react-genshin-progress",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "React-原神元素进度条",
   "main": "./dist/index.js",
   "repository": {
@@ -13,8 +13,8 @@
     "React"
   ],
   "scripts": {
-    "build": "babel index.js -d dist",
-    "publish": "npm publish --access public"
+    "build": "babel ./src/index.jsx -d dist",
+    "pub": "npm publish --access public"
   },
   "author": "ArSrNa",
   "license": "GNU",
