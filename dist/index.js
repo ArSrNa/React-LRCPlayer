@@ -200,8 +200,7 @@ export function GIProgress({
       zIndex: 1,
       position: 'relative',
       width,
-      clipPath: `inset(0px ${100 - num}% 0px 0px)`,
-      transition: 'clip-path .5s'
+      clipPath: `inset(0px ${100 - num}% 0px 0px)`
     }
   }, /*#__PURE__*/React.createElement(LoadDone, null)));
 }

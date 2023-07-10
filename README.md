@@ -17,7 +17,7 @@ npm i react-genshin-progress
 ## 引入
 
 ````jsx
-import { GIProgress } from 'react-genshin-progress';
+import { GIProgress } from 'genshin-progress';
 ````
 
 ## 示例
@@ -47,7 +47,7 @@ import { GIProgress } from 'react-genshin-progress';
 
 ```jsx
 import { useState } from 'react';
-import { GIProgress } from 'react-genshin-progress';
+import { GIProgress } from 'react-progress';
 const App = () => {
     const [num, setNum] = useState(0);
     return (<>
@@ -104,7 +104,6 @@ export default App;
 ## Unexpected Token <
 
 这是因为babel编译未成功的错误，在1.2.0版本完全修复
-
 
 ## React is not define
 
