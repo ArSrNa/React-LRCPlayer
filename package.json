@@ -1,6 +1,6 @@
 {
   "name": "genshin-progress",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "React-原神元素进度条",
   "main": "./dist/index.js",
   "repository": {
@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/ArSrNa/React-GenshinProgress/issues"
   },
-  "homepage": "https://github.com/ArSrNa/React-GenshinProgress#readme",
+  "homepage": "https://os.arsrna.cn/demo/nodejs/genshin-progress",
   "devDependencies": {},
   "dependencies": {
     "@babel/preset-react": "^7.22.5",
