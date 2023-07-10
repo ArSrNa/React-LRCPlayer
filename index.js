@@ -96,6 +96,14 @@ const LoadDone = () => (<div style={{ display: 'flex' }}>
     <Cryo color="#444" />
     <Geo color="#444" /></div>)
 
+/**
+* @description 原神 元素进度条
+* @param {Number} num 进度数值
+* @param {Number} width 进度条宽度
+* @param {Object} backgroundStyle 背景样式
+* @param {Object} progressStyle 前景样式
+*/
+
 export function GIProgress({ num, width, backgroundStyle, progressStyle }) {
 
     return (

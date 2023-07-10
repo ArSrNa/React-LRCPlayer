@@ -1,21 +1,30 @@
 {
-    "name": "react-genshin-progress",
-    "version": "1.0.2",
-    "description": "React-原神进度条",
-    "main": "./index.js",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/ArSrNa/React-GenshinProgress.git"
-    },
-    "keywords": [
-        "Genshin Impact",
-        "icon",
-        "React"
-    ],
-    "author": "ArSrNa",
-    "license": "GNU",
-    "bugs": {
-        "url": "https://github.com/ArSrNa/React-GenshinProgress/issues"
-    },
-    "homepage": "https://github.com/ArSrNa/React-GenshinProgress#readme"
+  "name": "react-genshin-progress",
+  "version": "1.1.0",
+  "description": "React-原神元素进度条",
+  "main": "./dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArSrNa/React-GenshinProgress.git"
+  },
+  "keywords": [
+    "Genshin Impact",
+    "icon",
+    "React"
+  ],
+  "scripts": {
+    "build": "babel index.js -d dist",
+    "publish": "npm publish --access public"
+  },
+  "author": "ArSrNa",
+  "license": "GNU",
+  "bugs": {
+    "url": "https://github.com/ArSrNa/React-GenshinProgress/issues"
+  },
+  "homepage": "https://github.com/ArSrNa/React-GenshinProgress#readme",
+  "devDependencies": {},
+  "dependencies": {
+    "@babel/preset-env": "^7.22.7",
+    "@babel/preset-react": "^7.22.5"
+  }
 }
