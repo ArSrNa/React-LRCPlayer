@@ -1,26 +1,9 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.Anemo = Anemo;
-exports.Cryo = Cryo;
-exports.Dendro = Dendro;
-exports.Electro = Electro;
-exports.GIProgress = GIProgress;
-exports.Geo = Geo;
-exports.Hydro = Hydro;
-exports.Pyro = Pyro;
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
-function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-function Anemo(_ref) {
-  var color = _ref.color;
+import React from "react";
+export function Anemo({
+  color
+}) {
   return /*#__PURE__*/React.createElement("svg", {
-    "class": "icon",
+    class: "icon",
     width: "200px",
     height: "200.00px",
     viewBox: "0 0 1024 1024",
@@ -31,11 +14,12 @@ function Anemo(_ref) {
     d: "M436.667 611.334c27.604 60.544-60.667 62-60.667 62 1.333 33.333 38.667 34.667 38.667 34.667 56-8 50.667-66.667 50.667-66.667-2-93.334-142-90.667-142-90.667-115.333 10.667-196-132-196-132-31.333 109.998 22 167.334 22 167.334 81.132 92 208 13.333 208 13.333 59.999-34.667 79.333 12 79.333 12zM471 512c-205-186-91-361-91-361-7-9-145.5 57-122 190 24.384 138.002 213 171 213 171zM615.965 718.018l-21.334 13.334s-80-15.346-76.334-79.346c0 0-3.332-106.669 184.334-125.336 0 0 218.334-28.67 100.334-264.67 0 0-1 185.523-213 259.262 0 0-71.965 37.738-84.483 88.738C492.964 559 421 521.262 421 521.262 209 447.523 208 262 208 262 90 498 308.333 526.67 308.333 526.67c187.665 18.667 184.333 125.336 184.333 125.336 3.667 64-76.333 79.346-76.333 79.346L395 718.018c-21-3-31.333 5.329-31.333 5.329 108 95.343 141.815 196.334 141.815 196.334s33.815-100.991 141.815-196.334c0 0-10.332-8.329-31.332-5.329zM505.482 848.343c-3.518-12.666-34.148-56.676-34.148-56.676 19.667-7.666 34.148-23 34.148-23s14.481 15.334 34.149 23c0 0-30.631 44.01-34.149 56.676z m0-107.01c-23.851 31-61.148 16.667-61.148 16.667 43.333-7.667 61.148-51.667 61.148-51.667s17.815 44 61.149 51.667c0 0-37.297 14.333-61.149-16.667zM752.965 341c23.5-133-115-199-122-190 0 0 114 175-91 361 0 0 188.615-32.998 213-171zM883.631 418.667s-80.666 142.667-196 132c0 0-140-2.667-142 90.667 0 0-5.334 58.667 50.666 66.667 0 0 37.334-1.334 38.668-34.667 0 0-88.271-1.456-60.668-62 0 0 19.334-46.667 79.334-12 0 0 126.867 78.667 208-13.333 0 0 53.334-57.337 22-167.334z"
   }));
 }
-function Cryo(_ref2) {
-  var color = _ref2.color;
+export function Cryo({
+  color
+}) {
   return /*#__PURE__*/React.createElement("svg", {
     t: "1688827819843",
-    "class": "icon",
+    class: "icon",
     viewBox: "0 0 1024 1024",
     version: "1.1",
     xmlns: "http://www.w3.org/2000/svg",
@@ -88,10 +72,11 @@ function Cryo(_ref2) {
     "p-id": "2103"
   }));
 }
-function Dendro(_ref3) {
-  var color = _ref3.color;
+export function Dendro({
+  color
+}) {
   return /*#__PURE__*/React.createElement("svg", {
-    "class": "icon",
+    class: "icon",
     width: "200px",
     height: "200.00px",
     viewBox: "0 0 1024 1024",
@@ -102,10 +87,11 @@ function Dendro(_ref3) {
     d: "M511.572 316.734V317c0.073-0.044 0.142-0.089 0.214-0.133L512 317v-0.266c127.394-77.83 8.078-196.516 0-204.324V112l-0.214 0.204-0.214-0.204v0.41c-8.078 7.809-127.394 126.494 0 204.324zM287.5 580s21-21.75 59.75-10c0 0 36.25 11 58.5 29.25 0 0 52.5 31 64 35 0 0-81-66.5-92.5-133.5 0 0-9.75-77.75 81.75-71.75 0 0-10-44.5-78.5-41 0 0-73-2.5-82 82.5 0 0-2.25 31 35.75 71.75 0 0-40-5.25-46.75 37.75zM824.572 530c11-113.5-45.5-169-45.5-169 98 31 105.5-91.5 105.5-91.5-130-21.5-116.5 79.5-116.5 79.5-145-126-243-5-243-5-13 24 27.5 48 27.5 48 18.5-56 80.5-51.5 80.5-51.5 145 1.5 142.5 142 142.5 142 1.5 140-122.5 184-122.5 184-112.15 41.643-138.757 94.765-141.286 100.34-2.53-5.575-29.136-58.697-141.286-100.34 0 0-124-44-122.5-184 0 0-2.5-140.5 142.5-142 0 0 62-4.5 80.5 51.5 0 0 40.5-24 27.5-48 0 0-98-121-243 5 0 0 13.5-101-116.5-79.5 0 0 7.5 122.5 105.5 91.5 0 0-56.5 55.5-45.5 169 0 0-36.5-48-87 21 0 0 62.5 51 89.5-8 0 0 13.5 99 114.5 159 0 0 54.25 38.75 96.5 54.25 0 0 57.766 21.61 99.072 128.65v1.099c0.071-0.186 0.143-0.364 0.214-0.549 0.071 0.185 0.143 0.363 0.214 0.549V884.9c41.305-107.04 99.072-128.65 99.072-128.65 42.25-15.5 96.5-54.25 96.5-54.25 101-60 114.5-159 114.5-159 27 59 89.5 8 89.5 8-50.5-69-87-21-87-21zM553.822 634.25c11.5-4 64-35 64-35 22.25-18.25 58.5-29.25 58.5-29.25 38.75-11.75 59.75 10 59.75 10-6.75-43-46.75-37.75-46.75-37.75 38-40.75 35.75-71.75 35.75-71.75-9-85-82-82.5-82-82.5-68.5-3.5-78.5 41-78.5 41 91.5-6 81.75 71.75 81.75 71.75-11.5 67-92.5 133.5-92.5 133.5z"
   }));
 }
-function Electro(_ref4) {
-  var color = _ref4.color;
+export function Electro({
+  color
+}) {
   return /*#__PURE__*/React.createElement("svg", {
-    "class": "icon",
+    class: "icon",
     width: "200px",
     height: "200.00px",
     viewBox: "0 0 1024 1024",
@@ -116,10 +102,11 @@ function Electro(_ref4) {
     d: "M506.482 707.444s-60.077-91.746 14.887-164.088l0.082 0.273s61.361-56.949 118.21-28.747c56.849 28.203 39.907 81.545 28.884 105.973 0 0 106.062-30.37 129.396-145.455 0 0 13.834-61.294-12.812-149.81 0 0 49.431 22.38 105.318 136.246 0 0-17.828-155.785-146.725-252.528 0 0-105.854-81.322-231.335-76.981 0 0 260.969 111.988 171.63 286.729 0 0-49.416 97.901-149.548 69.152l0.196-0.208s-80-24.666-84-87.999 50.667-75.333 77.333-78c0 0-79.333-76.667-190.667-39.333 0 0-60 18.667-123.333 86 0 0-5.333-53.998 65.333-159.332 0 0-126 93.332-145.333 253.332 0 0-17.5 132.332 49 238.832 0 0-33.5-282 162.5-292 0 0 109.491-6.154 134.66 94.936l-0.277-0.066s18.639 81.615-34.209 116.746c-52.849 35.131-90.574-6.212-106.217-27.972 0 0-26.729 107.037 61.27 184.788 0 0 46.166 42.628 136.145 63.81 0 0-44.098 31.618-170.652 23.085 0 0 143.828 62.453 292.059-0.803 0 0 123.354-51.011 182.335-161.852 0 0.001-227.469 170.013-334.13 5.272z"
   }));
 }
-function Geo(_ref5) {
-  var color = _ref5.color;
+export function Geo({
+  color
+}) {
   return /*#__PURE__*/React.createElement("svg", {
-    "class": "icon",
+    class: "icon",
     width: "200px",
     height: "200.00px",
     viewBox: "0 0 1024 1024",
@@ -130,10 +117,11 @@ function Geo(_ref5) {
     d: "M512 123S364 228 255 362c0 0 31 109 65 164 0 0 126.999-138 192-153 0 0 65 52 79 103 0 0-83 77-91 84 0 0 14 21 31 38 0 0 109-77 135-114 0 0-56.001-111-154-205 0 0-137 113-165 140 0 0 6.999-92 165-253 0 0 196 207 284 457 0 0 52-62.334 80-111 0 0-123-224-364-389zM512 651s-65-52-79-103c0 0 83-77 91-84 0 0-14-21-31-38 0 0-109 77-135 114 0 0 56.001 111 154 205 0 0 137-113 165-140 0 0-6.999 92-165 253 0 0-196-207-284-457 0 0-52 62.334-80 111 0 0 123 224 364 389 0 0 148-105 257-239 0 0-31-109-65-164 0 0-126.999 138-192 153z"
   }));
 }
-function Hydro(_ref6) {
-  var color = _ref6.color;
+export function Hydro({
+  color
+}) {
   return /*#__PURE__*/React.createElement("svg", {
-    "class": "icon",
+    class: "icon",
     width: "200px",
     height: "200.00px",
     viewBox: "0 0 1024 1024",
@@ -144,10 +132,11 @@ function Hydro(_ref6) {
     d: "M889.071 478.092c-3-118.494-116.404-325.425-347.071-340.758S181.5 300 175 340.5s23.5 53.597 23.5 53.597c30 20.597 62.103 0 62.103 0 117.269-159.239 271.372-135.428 271.372-135.428 294.641 37.333 284.692 307.998 284.692 307.998C815.334 752 652.5 830 652.5 830 809 730.5 772 568 772 568c-45-230-260-221.333-260-221.333-78.667 2-108.333 25-108.333 25C374 394 386 427 386 427c11 45 58 36 58 36 49-19 87.975-10 87.975-10C725.949 486 714 664.667 714 664.667 691.333 852.668 512 854 512 854c-95.333 9.333-219.898-59.424-219.898-59.424 37.498 92.995 239.473 94.495 239.473 94.495 392.464-53.997 357.496-410.979 357.496-410.979zM498 644s36.5-4 45.5 49.5c0 0 16 45.5 65.5 29.5 0 0 37-9.5 28-71.5 0 0-19-87.5-125-92 0 0-114.5-5.961-136.5 124.77 0 0-6 133.23 136.5 144.73 0 0 69.5-1 108-55.5 0 0 8.833-10.334 7.5-14 0 0 0.5-3-6.5 2.5s-25.5 48.5-109 47c0 0-71-3-88.5-81 0 0-9.5-80 74.5-84zM189 518.735m-53 0a53 53 0 1 0 106 0 53 53 0 1 0-106 0ZM257 684m-37 0a37 37 0 1 0 74 0 37 37 0 1 0-74 0Z"
   }));
 }
-function Pyro(_ref7) {
-  var color = _ref7.color;
+export function Pyro({
+  color
+}) {
   return /*#__PURE__*/React.createElement("svg", {
-    "class": "icon",
+    class: "icon",
     width: "200px",
     height: "200.00px",
     viewBox: "0 0 1024 1024",
@@ -158,34 +147,30 @@ function Pyro(_ref7) {
     d: "M724 458.67s-55.333-42.667-76-133.333c0 0-35.333 26-41.333 79.333 0 0-4.001 44.667 28.666 72.667 0 0 16 23.334 18 41.334 0 0-62-51.334-77.333-115.334 0 0-14.001-32.667 13.333-116.667 0 0-77.333 48-89.333 103.333 0 0-7.69 35.452 27.333 69.333 0 0-46.667-26.666-45.333-73.333 0 0-1.334-44 71.333-101.333 0 0 34-25.333 6.667-80.667 0 0-42-73.342-64-88.004 0 0 10 56-77 155 0 0-27 39-28 82 0 0-6 77 121 120 0 0 153 46 160 139 0 0 27 84-69 132 0 0-91 46-159-9 0 0-43.666-60.666 27.667-108.333 0 0-82-25.666-101 48.667 0 0-7.667 52.667 64.667 85 0 0 84 42.034 185 1.684S744.998 665.667 749.331 621c0 0 9-44-22-109 0 0 75 39.334 74 105.667 0 0 6.334 56.994-93.333 112.661S644.666 756.667 512 848.667c0 0-85-57.917-222-126.167 0 0-66.667-34.166-71.667-105.166 0 0-7-66.333 81.333-118.667 0 0-52.667 57.667-43.667 113 0 0 3.667 75.167 118.5 126.333 0 0-58.5-50.001-39.75-128.501 0 0 25.53-116.166 175.057-122.166 0 0-162.141-48.661-158.807-154.995 0 0-17 44.323-96 138.323 0 0-54 62.004-71 128.004 0 0-16 59.333 9 88.333 0 0 20 35.5 122.5 89 0 0 73 37 196.5 134.5 0 0 43.333-53.166 197.333-137.166 0 0 101.333-46 120-128.667 0.001 0.002 21.335-91.328-105.332-185.995zM623.5 634c-3.5-75-66.5-97-66.5-97-118.5-36-150.5 61.5-150.5 61.5C507 553.5 545 626 545 626c28 42-5 86-5 86 82-26 83.5-78 83.5-78z"
   }));
 }
-var Def = function Def() {
-  return /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'flex'
-    }
-  }, /*#__PURE__*/React.createElement(Pyro, null), /*#__PURE__*/React.createElement(Hydro, null), /*#__PURE__*/React.createElement(Anemo, null), /*#__PURE__*/React.createElement(Electro, null), /*#__PURE__*/React.createElement(Dendro, null), /*#__PURE__*/React.createElement(Cryo, null), /*#__PURE__*/React.createElement(Geo, null));
-};
-var LoadDone = function LoadDone() {
-  return /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'flex'
-    }
-  }, /*#__PURE__*/React.createElement(Pyro, {
-    color: "#444"
-  }), /*#__PURE__*/React.createElement(Hydro, {
-    color: "#444"
-  }), /*#__PURE__*/React.createElement(Anemo, {
-    color: "#444"
-  }), /*#__PURE__*/React.createElement(Electro, {
-    color: "#444"
-  }), /*#__PURE__*/React.createElement(Dendro, {
-    color: "#444"
-  }), /*#__PURE__*/React.createElement(Cryo, {
-    color: "#444"
-  }), /*#__PURE__*/React.createElement(Geo, {
-    color: "#444"
-  }));
-};
+const Def = () => /*#__PURE__*/React.createElement("div", {
+  style: {
+    display: 'flex'
+  }
+}, /*#__PURE__*/React.createElement(Pyro, null), /*#__PURE__*/React.createElement(Hydro, null), /*#__PURE__*/React.createElement(Anemo, null), /*#__PURE__*/React.createElement(Electro, null), /*#__PURE__*/React.createElement(Dendro, null), /*#__PURE__*/React.createElement(Cryo, null), /*#__PURE__*/React.createElement(Geo, null));
+const LoadDone = () => /*#__PURE__*/React.createElement("div", {
+  style: {
+    display: 'flex'
+  }
+}, /*#__PURE__*/React.createElement(Pyro, {
+  color: "#444"
+}), /*#__PURE__*/React.createElement(Hydro, {
+  color: "#444"
+}), /*#__PURE__*/React.createElement(Anemo, {
+  color: "#444"
+}), /*#__PURE__*/React.createElement(Electro, {
+  color: "#444"
+}), /*#__PURE__*/React.createElement(Dendro, {
+  color: "#444"
+}), /*#__PURE__*/React.createElement(Cryo, {
+  color: "#444"
+}), /*#__PURE__*/React.createElement(Geo, {
+  color: "#444"
+}));
 
 /**
 * @description 原神 元素进度条
@@ -195,25 +180,28 @@ var LoadDone = function LoadDone() {
 * @param {Object} progressStyle 前景样式
 */
 
-function GIProgress(_ref8) {
-  var num = _ref8.num,
-    width = _ref8.width,
-    backgroundStyle = _ref8.backgroundStyle,
-    progressStyle = _ref8.progressStyle;
+export function GIProgress({
+  num,
+  width,
+  backgroundStyle,
+  progressStyle
+}) {
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-    style: _objectSpread(_objectSpread({}, backgroundStyle), {}, {
+    style: {
+      ...backgroundStyle,
       zIndex: 0,
       position: 'absolute',
-      width: width,
+      width,
       overflow: "hidden"
-    })
+    }
   }, /*#__PURE__*/React.createElement(Def, null)), /*#__PURE__*/React.createElement("div", {
-    style: _objectSpread(_objectSpread({}, progressStyle), {}, {
+    style: {
+      ...progressStyle,
       zIndex: 1,
       position: 'relative',
-      width: width,
-      clipPath: "inset(0px ".concat(100 - num, "% 0px 0px)"),
+      width,
+      clipPath: `inset(0px ${100 - num}% 0px 0px)`,
       transition: 'clip-path .5s'
-    })
+    }
   }, /*#__PURE__*/React.createElement(LoadDone, null)));
 }
