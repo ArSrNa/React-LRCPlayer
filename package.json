@@ -1,16 +1,18 @@
 {
-  "name": "genshin-progress",
-  "version": "1.1.0",
-  "description": "React-原神元素进度条",
+  "name": "react-lrcplayer",
+  "version": "1.0.0",
+  "description": "React 带歌词的简易播放器",
   "main": "./dist/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ArSrNa/React-GenshinProgress.git"
+    "url": "git+https://github.com/ArSrNa/React-LRCPlayer.git"
   },
   "keywords": [
-    "Genshin Impact",
-    "icon",
-    "React"
+    "music player",
+    "LRC",
+    "lyric",
+    "music",
+    "effect"
   ],
   "scripts": {
     "build": "babel ./src/index.jsx -d dist",
@@ -19,9 +21,9 @@
   "author": "ArSrNa",
   "license": "GNU",
   "bugs": {
-    "url": "https://github.com/ArSrNa/React-GenshinProgress/issues"
+    "url": "https://github.com/ArSrNa/React-LRCPlayer/issues"
   },
-  "homepage": "https://os.arsrna.cn/demo/nodejs/genshin-progress",
+  "homepage": "https://os.arsrna.cn/demo/nodejs/lrcplayer",
   "devDependencies": {},
   "dependencies": {
     "@babel/preset-react": "^7.22.5",
