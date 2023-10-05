@@ -6,6 +6,8 @@
 
 - 标题副标题显示
 - 封面展示
+- 歌词动画（下版本）
+- 定义歌词行数（下版本）
 - 原生audio播放器
 - lrc歌词同步显示（需提前转换为json）
 
@@ -24,7 +26,7 @@ npm i react-lrcplayer
 ## 引入
 
 ````jsx
-import { Player,createLrcObj } from 'genshin-progress';
+import { LRCPlayer,createLrcObj } from 'react-lrcplayer';
 ````
 
 ## 示例
@@ -56,6 +58,7 @@ import { Player,createLrcObj } from 'genshin-progress';
 ## lrc
 
 此参数表示歌词对象，本框架已内置lrc转为对象的功能，如下LRC：
+
 ```text
 [00:26.446]天气晴 风平浪静 沙滩上混乱的脚印
 [00:32.499]钓鱼竿 两份孤单 会飞的落汤鸡
@@ -63,6 +66,7 @@ import { Player,createLrcObj } from 'genshin-progress';
 ```
 
 转换为对象即为
+
 ```json
 [{
     "t": 26.446,
@@ -77,7 +81,7 @@ import { Player,createLrcObj } from 'genshin-progress';
 ```
 
 其中，`t`为进入时间点，`c`为对应歌词内容；
-可以直接调用`createLrcObj(lrc歌词原内容)`来实现转换
+可以直接调用 `createLrcObj(lrc歌词原内容)`来实现转换
 
 # 常见问题
 

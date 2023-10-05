@@ -24,9 +24,10 @@
     "url": "https://github.com/ArSrNa/React-LRCPlayer/issues"
   },
   "homepage": "https://os.arsrna.cn/demo/nodejs/lrcplayer",
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/preset-react": "^7.22.5"
+  },
   "dependencies": {
-    "@babel/preset-react": "^7.22.5",
     "react": "^18.2.0"
   }
 }
