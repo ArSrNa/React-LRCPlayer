@@ -1,39 +1,61 @@
 import React, { useState } from "react";
+import './style.css';
 export default function LRCPlayer({
-  src = '',
-  cover = '',
-  title = '',
-  subTitle = '',
-  lrc = [],
+  src,
+  cover,
+  title,
+  subTitle,
+  lrc,
+  placeholder = "空",
+  animate = {
+    type: "fade",
+    duration: 0.5
+  },
+  nextLrc = {
+    display: false,
+    number: 5
+  },
   offset = 0
 }) {
   const [current, setCurrent] = useState("");
   const [next, setNext] = useState("");
+  const [lrcText, setLrcText] = useState("");
+  useEffect(() => {
+    setLrcText( /*#__PURE__*/React.createElement("div", {
+      key: current,
+      className: "lrc",
+      style: {
+        "--animate-type": animate.type,
+        "--animate-duration": animate.duration + "s"
+      }
+    }, current === "" ? /*#__PURE__*/React.createElement("i", {
+      style: {
+        color: "grey"
+      }
+    }, placeholder) : current));
+  }, [current]);
   const ontimeupdate = e => {
     const {
       currentTime
     } = e.target;
-    for (let i1 = 0; i1 < lrc.length; i1++) {
+    lrc.forEach((lyric, i1) => {
       let isCurrent = currentTime >= lrc[i1].t + offset;
       if (isCurrent) {
-        setCurrent(lrc[i1].c);
+        setCurrent(lyric.c);
         if (i1 + 2 < lrc.length) {
-          setNext( /*#__PURE__*/React.createElement(React.Fragment, null, lrc[i1 + 1].c === "" ? /*#__PURE__*/React.createElement("i", {
-            style: {
-              color: "grey"
-            }
-          }, "\u7A7A") : lrc[i1 + 1].c, /*#__PURE__*/React.createElement("br", null), lrc[i1 + 2].c === "" ? /*#__PURE__*/React.createElement("i", {
-            style: {
-              color: "grey"
-            }
-          }, "\u7A7A") : lrc[i1 + 2].c));
+          setNext( /*#__PURE__*/React.createElement(React.Fragment, null, Array.from(new Array(nextLrc.number).keys()).map(offset => {
+            const line = lrc[i1 + 1 + offset].c;
+            return line === "" ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("i", {
+              key: offset,
+              style: {
+                color: "royalblue"
+              }
+            }, placeholder), /*#__PURE__*/React.createElement("br", null)) : /*#__PURE__*/React.createElement(React.Fragment, null, line, /*#__PURE__*/React.createElement("br", null));
+          })));
         }
       }
-      // console.log(lrc[i1].c);
-      // lrc.splice(i1, 1);
-    }
+    });
   };
-
   return /*#__PURE__*/React.createElement("div", {
     style: {
       borderRadius: 8,
@@ -49,10 +71,11 @@ export default function LRCPlayer({
     }
   }, /*#__PURE__*/React.createElement("img", {
     src: cover,
-    width: 100,
+    width: 80,
     alt: "cover",
     style: {
-      marginRight: 10
+      marginRight: 15,
+      borderRadius: 8
     }
   }), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("span", {
     style: {
@@ -68,25 +91,19 @@ export default function LRCPlayer({
       textAlign: "center",
       paddingBlock: 15
     }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontSize: "1.3rem"
-    }
-  }, current === "" ? /*#__PURE__*/React.createElement("i", {
+  }, lrcText, nextLrc.display ? /*#__PURE__*/React.createElement("div", {
     style: {
       color: "grey"
     }
-  }, "\u7A7A") : current), /*#__PURE__*/React.createElement("div", {
-    style: {
-      color: "grey"
-    }
-  }, next)), /*#__PURE__*/React.createElement("audio", {
+  }, next) : ""), /*#__PURE__*/React.createElement("audio", {
     src: src,
     controls: true,
     style: {
       width: "100%"
     },
-    onTimeUpdate: ontimeupdate
+    onTimeUpdate: e => {
+      ontimeupdate(e);
+    }
   }));
 }
 export function createLrcObj(lrc) {

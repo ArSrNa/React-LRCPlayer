@@ -1,6 +1,6 @@
 {
   "name": "react-lrcplayer",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "React 带歌词的简易播放器",
   "main": "./dist/index.js",
   "repository": {
@@ -15,8 +15,8 @@
     "effect"
   ],
   "scripts": {
-    "build": "babel ./src/index.jsx -d dist",
-    "pub": "babel ./src/index.jsx -d dist&&npm publish --access public"
+    "build": "babel ./src/index.jsx -d dist --copy-files",
+    "pub": "babel ./src/index.jsx -d dist --copy-files&&npm publish --access public"
   },
   "author": "ArSrNa",
   "license": "GNU",

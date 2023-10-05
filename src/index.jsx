@@ -1,41 +1,75 @@
 import React, { useState } from "react";
-
+import './style.css'
 export default function LRCPlayer({
-    src = '',
-    cover = '',
-    title = '',
-    subTitle = '',
-    lrc = [],
-    offset = 0 }) {
+    src,
+    cover,
+    title = "",
+    subTitle = "",
+    lrc,
+    placeholder = "空",
+    animate = {
+        type: "fade",
+        duration: 0.5
+    },
+    nextLrc = {
+        display: false,
+        number: 5
+    },
+    offset = 0
+}) {
     const [current, setCurrent] = useState("");
     const [next, setNext] = useState("");
+    const [lrcText, setLrcText] = useState("");
+
+    useEffect(() => {
+        setLrcText(
+            <div
+                key={current}
+                className="lrc"
+                style={{
+                    "--animate-type": animate.type,
+                    "--animate-duration": animate.duration + "s"
+                }}
+            >
+                {current === "" ? (
+                    <i style={{ color: "grey" }}>{placeholder}</i>
+                ) : (
+                    current
+                )}
+            </div>
+        );
+    }, [current]);
+
     const ontimeupdate = (e) => {
         const { currentTime } = e.target;
-        for (let i1 = 0; i1 < lrc.length; i1++) {
+        lrc.forEach((lyric, i1) => {
             let isCurrent = currentTime >= lrc[i1].t + offset;
             if (isCurrent) {
-                setCurrent(lrc[i1].c);
+                setCurrent(lyric.c);
                 if (i1 + 2 < lrc.length) {
                     setNext(
                         <>
-                            {lrc[i1 + 1].c === "" ? (
-                                <i style={{ color: "grey" }}>空</i>
-                            ) : (
-                                lrc[i1 + 1].c
-                            )}
-                            <br />
-                            {lrc[i1 + 2].c === "" ? (
-                                <i style={{ color: "grey" }}>空</i>
-                            ) : (
-                                lrc[i1 + 2].c
-                            )}
+                            {Array.from(new Array(nextLrc.number).keys()).map((offset) => {
+                                const line = lrc[i1 + 1 + offset].c;
+                                return line === "" ? (
+                                    <>
+                                        <i key={offset} style={{ color: "royalblue" }}>
+                                            {placeholder}
+                                        </i>
+                                        <br />
+                                    </>
+                                ) : (
+                                    <>
+                                        {line}
+                                        <br />
+                                    </>
+                                );
+                            })}
                         </>
                     );
                 }
             }
-            // console.log(lrc[i1].c);
-            // lrc.splice(i1, 1);
-        }
+        });
     };
 
     return (
@@ -54,7 +88,12 @@ export default function LRCPlayer({
                     paddingBottom: 10
                 }}
             >
-                <img src={cover} width={100} alt="cover" style={{ marginRight: 10 }} />
+                <img
+                    src={cover}
+                    width={80}
+                    alt="cover"
+                    style={{ marginRight: 15, borderRadius: 8 }}
+                />
                 <div>
                     <div>
                         <span style={{ fontSize: "1.7rem", color: "royalblue" }}>
@@ -68,21 +107,17 @@ export default function LRCPlayer({
             </div>
 
             <div style={{ textAlign: "center", paddingBlock: 15 }}>
-                <div
-                    style={{
-                        fontSize: "1.3rem"
-                    }}
-                >
-                    {current === "" ? <i style={{ color: "grey" }}>空</i> : current}
-                </div>
-                <div style={{ color: "grey" }}>{next}</div>
+                {lrcText}
+                {nextLrc.display ? <div style={{ color: "grey" }}>{next}</div> : ""}
             </div>
 
             <audio
                 src={src}
                 controls
                 style={{ width: "100%" }}
-                onTimeUpdate={ontimeupdate}
+                onTimeUpdate={(e) => {
+                    ontimeupdate(e);
+                }}
             />
         </div>
     );
