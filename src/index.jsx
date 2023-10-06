@@ -46,28 +46,29 @@ export default function LRCPlayer({
             let isCurrent = currentTime >= lrc[i1].t + offset;
             if (isCurrent) {
                 setCurrent(lyric.c);
-                if (i1 + 2 < lrc.length) {
-                    setNext(
-                        <>
-                            {Array.from(new Array(nextLrc.number).keys()).map((offset) => {
-                                const line = lrc[i1 + 1 + offset].c;
-                                return line === "" ? (
-                                    <>
-                                        <i key={offset} style={{ color: "royalblue" }}>
-                                            {placeholder}
-                                        </i>
-                                        <br />
-                                    </>
-                                ) : (
-                                    <>
-                                        {line}
-                                        <br />
-                                    </>
-                                );
-                            })}
-                        </>
-                    );
-                }
+                // if (i1 + nextLrc.number < lrc.length) {
+                setNext(
+                    <>
+                        {Array.from(new Array(nextLrc.number).keys()).map((offset) => {
+                            const line =
+                                i1 + 1 + offset < lrc.length ? lrc[i1 + 1 + offset].c : " ";
+                            return line === "" ? (
+                                <>
+                                    <i key={offset} style={{ color: "royalblue" }}>
+                                        {placeholder}
+                                    </i>
+                                    <br />
+                                </>
+                            ) : (
+                                <>
+                                    {line}
+                                    <br />
+                                </>
+                            );
+                        })}
+                    </>
+                );
+                // }
             }
         });
     };
