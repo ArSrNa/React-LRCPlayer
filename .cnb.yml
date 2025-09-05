@@ -21,6 +21,7 @@ $:
           image: tencentcom/git-sync
           imports:
             - https://cnb.cool/arsrna/env/-/blob/main/git.yaml
+            - https://cnb.cool/arsrna/env/-/blob/main/npm.yml
           settings:
             target_url: https://github.com/ArSrNa/React-LRCPlayer.git
             auth_type: https
@@ -32,6 +33,8 @@ $:
   tag_push:
     - docker:
         image: docker.cnb.cool/arsrna/dev-env/node22:latest
+      imports:
+        - https://cnb.cool/arsrna/env/-/blob/main/npm.yml
       stages:
         - name: 构建部署
           script:
@@ -44,9 +47,9 @@ $:
         - name: npm publish
           image: tencentcom/npm
           settings:
-            username: $CNB_TOKEN_USER_NAME
-            token: $CNB_TOKEN
-            email: $CNB_COMMITTER_EMAIL
+            username: $NPM_USER
+            token: $NPM_TOKEN
+            email: $NPM_EMAIL
             registry: https://registry.npmjs.org/
             folder: ./
             fail_on_version_conflict: true

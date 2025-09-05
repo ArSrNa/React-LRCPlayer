@@ -23,7 +23,9 @@
     "url": "https://github.com/ArSrNa/React-LRCPlayer/issues"
   },
   "homepage": "https://os.arsrna.cn/demo/nodejs/lrcplayer",
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/react": "^19.1.12"
+  },
   "dependencies": {
     "react": "^18.2.0"
   }

@@ -8,7 +8,8 @@
         "module": "commonjs", // 指定模块化类型
         "declaration": true, // 生成 `.d.ts` 文件
         "outDir": "./dist", // 编译后生成的文件目录
-        "strict": true,
+        "strict": false,
+        "strictNullChecks": false,
         "jsx": "react-jsx"
     },
     "include": [

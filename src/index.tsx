@@ -1,5 +1,11 @@
-import React, { useState } from "react";
-import './style.css'
+import { CSSProperties, useEffect, useState } from "react";
+import './style.css';
+
+interface LrcObj {
+    t: number;
+    c: string;
+}
+
 export default function LRCPlayer({
     src,
     cover,
@@ -16,10 +22,26 @@ export default function LRCPlayer({
         number: 5
     },
     offset = 0
+}: {
+    src: string;
+    cover: string;
+    title?: string;
+    subTitle?: string;
+    lrc: LrcObj[];
+    placeholder?: string;
+    animate?: {
+        type: "fade" | "slide";
+        duration: number;
+    };
+    nextLrc?: {
+        display: boolean;
+        number: number;
+    };
+    offset?: number;
 }) {
     const [current, setCurrent] = useState("");
-    const [next, setNext] = useState("");
-    const [lrcText, setLrcText] = useState("");
+    const [next, setNext] = useState(<></>);
+    const [lrcText, setLrcText] = useState(<></>);
 
     useEffect(() => {
         setLrcText(
@@ -29,7 +51,7 @@ export default function LRCPlayer({
                 style={{
                     "--animate-type": animate.type,
                     "--animate-duration": animate.duration + "s"
-                }}
+                } as CSSProperties}
             >
                 {current === "" ? (
                     <i style={{ color: "grey" }}>{placeholder}</i>
@@ -124,7 +146,7 @@ export default function LRCPlayer({
     );
 }
 
-export function createLrcObj(lrc) {
+export function createLrcObj(lrc: string): LrcObj[] {
     let oLRC = [];
     if (lrc.length === 0) return;
     var lrcs = lrc.split("\n"); //用回车拆分成数组
