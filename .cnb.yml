@@ -8,6 +8,8 @@ $:
         volumes:
           - /root/.npm
           - /root/.pnpm-store
+      imports:
+        - https://cnb.cool/arsrna/env/-/blob/main/npm.yml
       runner:
         cpus: 16
       stages:
@@ -21,7 +23,6 @@ $:
           image: tencentcom/git-sync
           imports:
             - https://cnb.cool/arsrna/env/-/blob/main/git.yaml
-            - https://cnb.cool/arsrna/env/-/blob/main/npm.yml
           settings:
             target_url: https://github.com/ArSrNa/React-LRCPlayer.git
             auth_type: https
