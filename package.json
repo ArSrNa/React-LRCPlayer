@@ -6,18 +6,18 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/react-lrcplayer.umd.cjs",
-  "module": "./dist/react-lrcplayer.js",
+  "main": "./dist/index.umd.cjs",
+  "module": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/react-lrcplayer.js",
-      "require": "./dist/react-lrcplayer.umd.cjs"
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs"
     }
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ArSrNa/React-LRCPlayer.git"
+    "url": "git+https://cnb.cool/arsrna/os/React-LRCPlayer.git"
   },
   "keywords": [
     "music player",
@@ -33,7 +33,7 @@
   "author": "ArSrNa",
   "license": "GNU",
   "bugs": {
-    "url": "https://github.com/ArSrNa/React-LRCPlayer/issues"
+    "url": "https://cnb.cool/arsrna/os/React-LRCPlayer/-/issues"
   },
   "homepage": "https://os.arsrna.cn/demo/nodejs/lrcplayer",
   "devDependencies": {
