@@ -8,17 +8,27 @@ function resolve(str: string) {
 }
 
 export default defineConfig({
-  css: {
-    modules: {
-      // 配置CSS Modules
-      generateScopedName: '[local]', // 保持原类名，不添加哈希
-      // 或者使用更复杂的模式保留原类名同时添加作用域
-      // generateScopedName: '[local]__[hash:base64:5]',
+  publicDir: false,
+  server: {
+    host: '0.0.0.0',
+    allowedHosts: true,
+    open: false,
+    watch: {
+      usePolling: true, // 修复HMR热更新失效
     },
   },
   plugins: [
     react(),
-    typescript(),
+    typescript({
+      target: 'esnext',
+      module: 'esnext',
+      rootDir: resolve('packages/'),
+      declaration: true,
+      declarationDir: resolve('dist'),
+      exclude: resolve('node_modules/**'),
+      allowSyntheticDefaultImports: true,
+      noForceEmit: true,
+    }),
   ],
   build: {
     // 打包输出的目录
@@ -27,14 +37,14 @@ export default defineConfig({
     cssTarget: 'chrome61',
     lib: {
       // 组件库源码的入口文件
-      entry: resolve('src/index.tsx'),
+      entry: resolve('packages/index.tsx'),
       // 组件库名称
       name: 'react-lrcplayer',
       fileName: 'react-lrcplayer',
     },
     rollupOptions: {
       // 确保外部化处理那些你不想打包进库的依赖
-      external: ['react', 'react-dom'],
+      external: ['react', 'react-dom', 'antd', 'typescript'],
       output: {
         // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
         globals: {
