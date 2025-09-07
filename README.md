@@ -39,7 +39,7 @@ npm i react-lrcplayer
 ```typescript
 import { LRCPlayer,createLrcObj } from 'react-lrcplayer';
 // 全局引用样式
-import 'react-lrcplayer/index.css';
+import 'react-lrcplayer/dist/index.css';
 ```
 
 ## 示例
