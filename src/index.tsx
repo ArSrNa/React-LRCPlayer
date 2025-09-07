@@ -1,8 +1,10 @@
-import { CSSProperties, useEffect, useState } from "react";
+import { CSSProperties, ReactElement, ReactNode, useEffect, useState } from "react";
 import './style.css';
 
 interface LrcObj {
+    /**时间戳 */
     t: number;
+    /**歌词 */
     c: string;
 }
 
@@ -14,7 +16,7 @@ export default function LRCPlayer({
     lrc,
     placeholder = "空",
     animate = {
-        type: "fade",
+        type: "lrcplayer-fade",
         duration: 0.5
     },
     nextLrc = {
@@ -23,31 +25,48 @@ export default function LRCPlayer({
     },
     offset = 0
 }: {
+    /**音频地址 */
     src: string;
+    /**封面 */
     cover: string;
+    /**标题 */
     title?: string;
+    /**副标题 */
     subTitle?: string;
+    /**Lrc对象 */
     lrc: LrcObj[];
+    /**无歌词时显示内容 */
     placeholder?: string;
+    /**动画选项 */
     animate?: {
-        type: "fade" | "slide";
+        /**
+         * @description 动画名称
+         * 
+         * 这里支持自定义keyframe传入，在css设置@keyframe 之后，keyframe的名称即为这里能够传入的动画名称
+         */
+        type: "lrcplayer-fade" | "lrcplayer-slide" | string;
+        /**持续时长 */
         duration: number;
     };
+    /**下句歌词显示设置 */
     nextLrc?: {
+        /**是否显示 */
         display: boolean;
+        /**显示数量 */
         number: number;
     };
+    /**歌词时差 */
     offset?: number;
 }) {
-    const [current, setCurrent] = useState("");
+    const [current, setCurrent] = useState<string | ReactNode>(<></>);
     const [next, setNext] = useState(<></>);
     const [lrcText, setLrcText] = useState(<></>);
 
     useEffect(() => {
         setLrcText(
             <div
-                key={current}
-                className="lrc"
+                key={`lrcplayer-lrc_${Math.random()}`}
+                className="lrcplayer-display"
                 style={{
                     "--animate-type": animate.type,
                     "--animate-duration": animate.duration + "s"
@@ -125,7 +144,6 @@ export default function LRCPlayer({
                         <br />
                         <span style={{ color: "grey" }}>{subTitle}</span>
                     </div>
-                    {/* <hr /> */}
                 </div>
             </div>
 
@@ -138,9 +156,7 @@ export default function LRCPlayer({
                 src={src}
                 controls
                 style={{ width: "100%" }}
-                onTimeUpdate={(e) => {
-                    ontimeupdate(e);
-                }}
+                onTimeUpdate={ontimeupdate}
             />
         </div>
     );

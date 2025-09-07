@@ -1,4 +1,4 @@
-@keyframes slide {
+@keyframes lrcplayer-slide {
     0% {
         opacity: 0;
         transform: translate(-5%);
@@ -15,7 +15,7 @@
     }
 }
 
-@keyframes fade {
+@keyframes lrcplayer-fade {
     from {
         opacity: 0;
         filter: blur(10px);
@@ -29,7 +29,7 @@
 
 @keyframes none {}
 
-.lrc {
+.lrcplayer-display {
     /* position: relative; */
     animation-name: var(--animate-type);
     animation-duration: var(--animate-duration);

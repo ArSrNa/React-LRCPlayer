@@ -7,20 +7,20 @@ var react_1 = require("react");
 require("./style.css");
 function LRCPlayer(_a) {
     var src = _a.src, cover = _a.cover, _b = _a.title, title = _b === void 0 ? "" : _b, _c = _a.subTitle, subTitle = _c === void 0 ? "" : _c, lrc = _a.lrc, _d = _a.placeholder, placeholder = _d === void 0 ? "空" : _d, _e = _a.animate, animate = _e === void 0 ? {
-        type: "fade",
+        type: "lrcplayer-fade",
         duration: 0.5
     } : _e, _f = _a.nextLrc, nextLrc = _f === void 0 ? {
         display: false,
         number: 5
     } : _f, _g = _a.offset, offset = _g === void 0 ? 0 : _g;
-    var _h = (0, react_1.useState)(""), current = _h[0], setCurrent = _h[1];
+    var _h = (0, react_1.useState)((0, jsx_runtime_1.jsx)(jsx_runtime_1.Fragment, {})), current = _h[0], setCurrent = _h[1];
     var _j = (0, react_1.useState)((0, jsx_runtime_1.jsx)(jsx_runtime_1.Fragment, {})), next = _j[0], setNext = _j[1];
     var _k = (0, react_1.useState)((0, jsx_runtime_1.jsx)(jsx_runtime_1.Fragment, {})), lrcText = _k[0], setLrcText = _k[1];
     (0, react_1.useEffect)(function () {
-        setLrcText((0, jsx_runtime_1.jsx)("div", { className: "lrc", style: {
+        setLrcText((0, jsx_runtime_1.jsx)("div", { className: "lrcplayer-display", style: {
                 "--animate-type": animate.type,
                 "--animate-duration": animate.duration + "s"
-            }, children: current === "" ? ((0, jsx_runtime_1.jsx)("i", { style: { color: "grey" }, children: placeholder })) : (current) }, current));
+            }, children: current === "" ? ((0, jsx_runtime_1.jsx)("i", { style: { color: "grey" }, children: placeholder })) : (current) }, "lrcplayer-lrc_".concat(Math.random())));
     }, [current]);
     var ontimeupdate = function (e) {
         var currentTime = e.target.currentTime;
@@ -46,9 +46,7 @@ function LRCPlayer(_a) {
                     display: "flex",
                     alignItems: "center",
                     paddingBottom: 10
-                }, children: [(0, jsx_runtime_1.jsx)("img", { src: cover, width: 80, alt: "cover", style: { marginRight: 15, borderRadius: 8 } }), (0, jsx_runtime_1.jsx)("div", { children: (0, jsx_runtime_1.jsxs)("div", { children: [(0, jsx_runtime_1.jsx)("span", { style: { fontSize: "1.7rem", color: "royalblue" }, children: title }), (0, jsx_runtime_1.jsx)("br", {}), (0, jsx_runtime_1.jsx)("span", { style: { color: "grey" }, children: subTitle })] }) })] }), (0, jsx_runtime_1.jsxs)("div", { style: { textAlign: "center", paddingBlock: 15 }, children: [lrcText, nextLrc.display ? (0, jsx_runtime_1.jsx)("div", { style: { color: "grey" }, children: next }) : ""] }), (0, jsx_runtime_1.jsx)("audio", { src: src, controls: true, style: { width: "100%" }, onTimeUpdate: function (e) {
-                    ontimeupdate(e);
-                } })] }));
+                }, children: [(0, jsx_runtime_1.jsx)("img", { src: cover, width: 80, alt: "cover", style: { marginRight: 15, borderRadius: 8 } }), (0, jsx_runtime_1.jsx)("div", { children: (0, jsx_runtime_1.jsxs)("div", { children: [(0, jsx_runtime_1.jsx)("span", { style: { fontSize: "1.7rem", color: "royalblue" }, children: title }), (0, jsx_runtime_1.jsx)("br", {}), (0, jsx_runtime_1.jsx)("span", { style: { color: "grey" }, children: subTitle })] }) })] }), (0, jsx_runtime_1.jsxs)("div", { style: { textAlign: "center", paddingBlock: 15 }, children: [lrcText, nextLrc.display ? (0, jsx_runtime_1.jsx)("div", { style: { color: "grey" }, children: next }) : ""] }), (0, jsx_runtime_1.jsx)("audio", { src: src, controls: true, style: { width: "100%" }, onTimeUpdate: ontimeupdate })] }));
 }
 function createLrcObj(lrc) {
     var oLRC = [];
