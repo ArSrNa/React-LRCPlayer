@@ -1,5 +1,5 @@
 import { CSSProperties, ReactElement, ReactNode, useEffect, useState } from "react";
-import './style.css';
+import './index.css';
 
 interface LrcObj {
     /**时间戳 */
