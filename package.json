@@ -1,6 +1,6 @@
 {
   "name": "react-lrcplayer",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "React 带歌词的简易播放器",
   "type": "module",
   "files": [
