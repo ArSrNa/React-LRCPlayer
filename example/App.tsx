@@ -1,6 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import { Form, Input, Checkbox, Radio, InputNumber, Button } from "antd";
-import { LRCPlayer, createLrcObj } from "../packages/index";
+// import { LRCPlayer, createLrcObj } from "../packages/index";
+
+import { LRCPlayer, createLrcObj } from "../dist/index";
+import "../dist/index.css";
 
 import src from './assets/希林娜依高,HOYO-MiX - 烬火 Emberfire.mp3'
 import cover from './assets/cover.jpg'

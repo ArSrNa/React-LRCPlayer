@@ -8,6 +8,11 @@ function resolve(str: string) {
 }
 
 export default defineConfig({
+  // css: {
+  //   modules: {
+  //     generateScopedName: '[name]__[local]', // 禁用哈希
+  //   },
+  // },
   publicDir: false,
   server: {
     host: '0.0.0.0',
@@ -20,27 +25,41 @@ export default defineConfig({
   plugins: [
     react(),
     typescript({
-      target: 'esnext',
-      module: 'esnext',
-      rootDir: resolve('packages/'),
-      declaration: true,
-      declarationDir: resolve('dist'),
-      exclude: resolve('node_modules/**'),
-      allowSyntheticDefaultImports: true,
-      noForceEmit: true,
+      compilerOptions: {
+        target: "esnext", // 指定ECMAScript目标版本
+        module: "esnext",
+        lib: [
+          "ES6",
+          "DOM",
+        ],
+        declaration: true, // 生成 `.d.ts` 文件
+        outDir: "./dist", // 编译后生成的文件目录
+        strict: false,
+        jsx: "react-jsx",
+        noEmit: false, // 确保 noEmit 为 false（默认值）
+        emitDeclarationOnly: false, // 确保 emitDeclarationOnly 为 false（默认值）
+        allowImportingTsExtensions: false, // 禁用该选项
+      },
+      include: [
+        resolve("./packages/**/*"),
+      ],
+      exclude: [
+        resolve("./node_modules/**/*"),
+      ],
     }),
   ],
   build: {
+    cssCodeSplit: false,
     // 打包输出的目录
     outDir: 'dist',
     // 防止 vite 将 rgba() 颜色转化为 #RGBA 十六进制
     cssTarget: 'chrome61',
     lib: {
       // 组件库源码的入口文件
-      entry: resolve('packages/index.tsx'),
+      entry: resolve('packages/index.ts'),
       // 组件库名称
-      name: 'react-lrcplayer',
-      fileName: 'react-lrcplayer',
+      name: 'index',
+      fileName: 'index',
     },
     rollupOptions: {
       // 确保外部化处理那些你不想打包进库的依赖

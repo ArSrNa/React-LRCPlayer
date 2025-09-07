@@ -100,35 +100,19 @@ export function LRCPlayer(props: {
     };
 
     return (
-        <div
-            style={{
-                borderRadius: 8,
-                border: "#ccc solid 1px",
-                paddingBlock: 20,
-                paddingInline: 20
-            }}
-        >
-            <div
-                style={{
-                    display: "flex",
-                    alignItems: "center",
-                    paddingBottom: 10
-                }}
-            >
+        <div className={style['lrcplayer-container']}>
+            <div className={style['lrcplayer-header']}>
                 <img
                     src={cover}
                     width={80}
                     alt="cover"
-                    style={{ marginRight: 15, borderRadius: 8 }}
                 />
                 <div>
-                    <div>
-                        <span style={{ fontSize: "1.7rem", color: "royalblue" }}>
-                            {title}
-                        </span>
-                        <br />
-                        <span style={{ color: "grey" }}>{subTitle}</span>
-                    </div>
+                    <span className={style['lrcplayer-title']}>
+                        {title}
+                    </span>
+                    <br />
+                    <span style={{ color: "grey" }}>{subTitle}</span>
                 </div>
             </div>
 
