@@ -1,4 +1,4 @@
 .cnb.yml
-lib/
+src/
 test/
 image/

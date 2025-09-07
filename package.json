@@ -1,6 +1,6 @@
 {
   "name": "react-lrcplayer",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "React 带歌词的简易播放器",
   "main": "./dist/index.js",
   "repository": {
@@ -27,6 +27,7 @@
     "@types/react": "^19.1.12"
   },
   "dependencies": {
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "typescript": "^5.9.2"
   }
 }
