@@ -1,4 +1,6 @@
-## 带LRC歌词的简易播放器![](image/README/QQ20250907-225730.png)
+## 带LRC歌词的简易播放器
+
+![](image/README/QQ20250907-225730.png)
 
 ### 功能
 
@@ -24,7 +26,7 @@ npm start
 
 打开localhost:5173即可测试demo
 
-![](QQ20250907-230955.png)
+![](image/README/QQ20250907-230955.png)
 
 ## 用法
 
