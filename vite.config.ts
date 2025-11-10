@@ -53,12 +53,11 @@ export default defineConfig({
     // 打包输出的目录
     outDir: 'dist',
     lib: {
-      formats: ['es', 'umd'],
       // 组件库源码的入口文件
       entry: resolve('packages/index.ts'),
       // 组件库名称
       name: 'index',
-      fileName: (format) => `index.${format}.js`,
+      fileName: 'index',
     },
     rollupOptions: {
       // 确保外部化处理那些你不想打包进库的依赖
