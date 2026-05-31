@@ -55,6 +55,7 @@ import 'react-lrcplayer/dist/index.css';
         title="希林娜依高,HOYO-MiX - 烬火 Emberfire"
         subTitle="《原神》动画短片「烬中歌」插曲"
         lrc={lrc}
+        align="center"
         placeholder="无歌词"
         offset="-0.3"
         animate={{
@@ -77,6 +78,7 @@ import 'react-lrcplayer/dist/index.css';
 | title    | string / React DOM | 播放器标题                     | ""                              | 否   |
 | subTitle | string / React DOM | 副标题                         | ""                              | 否   |
 | lrc      | object             | lrc对象，内容见下文            | undefined                       | 是   |
+| align    | string             | 歌词对齐方式 (start/center/end)| "center"                        | 否   |
 | offset   | number             | 偏移量，正数为延后，负数为提前 | 0                               | 否   |
 | animate  | object             | 动画设置，内容见下文           | { type: "fade", duration: 0.5 } | 否   |
 | nextLrc  | object             | 下句歌词显示设置，内容见下文   | { display:false, number:5 }     | 否   |
