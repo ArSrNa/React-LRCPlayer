@@ -1,5 +1,5 @@
 import style from './index.module.scss';
-import { CSSProperties, ReactElement, ReactNode, useEffect, useState } from "react";
+import { CSSProperties, ReactElement, ReactNode, useEffect, useRef, useState } from "react";
 import { LrcObj } from "./type";
 
 export function LRCPlayer(props: {
@@ -29,6 +29,7 @@ export function LRCPlayer(props: {
         /**显示数量 */
         number: number;
     };
+    align?: "start" | 'center' | 'end'
     /**歌词时差 */
     offset?: number;
 }) {
@@ -38,6 +39,7 @@ export function LRCPlayer(props: {
         title = "",
         subTitle = "",
         lrc,
+        align = 'center',
         placeholder = "空",
         animate = {
             type: "lrcplayer-fade",
@@ -49,6 +51,7 @@ export function LRCPlayer(props: {
         },
         offset = 0
     } = props;
+    const audioRef = useRef<HTMLAudioElement>(null);
     const [current, setCurrent] = useState<string | ReactNode>(<></>);
     const [next, setNext] = useState(<></>);
     const [lrcText, setLrcText] = useState(<></>);
@@ -60,6 +63,7 @@ export function LRCPlayer(props: {
                 className={style["lrcplayer-display"]}
                 style={{
                     animationName: style[animate.type],
+                    '--align': align,
                     "--animate-duration": animate.duration + "s"
                 } as CSSProperties}
             >
@@ -72,8 +76,14 @@ export function LRCPlayer(props: {
         );
     }, [current]);
 
-    const ontimeupdate = (e) => {
-        const { currentTime } = e.target;
+    useEffect(() => {
+        if (audioRef.current) {
+            initAnimate();
+        }
+    }, [audioRef]);
+
+    const initAnimate = () => {
+        const { currentTime } = audioRef.current;
         lrc.forEach((lyric, i1) => {
             let isCurrent = currentTime >= lrc[i1].t + offset;
             if (isCurrent) {
@@ -97,6 +107,7 @@ export function LRCPlayer(props: {
                 );
             }
         });
+        requestAnimationFrame(initAnimate)
     };
 
     return (
@@ -116,7 +127,7 @@ export function LRCPlayer(props: {
                 </div>
             </div>
 
-            <div style={{ textAlign: "center", paddingBlock: 15 }}>
+            <div style={{ textAlign: align, paddingBlock: 15 }}>
                 {lrcText}
                 {nextLrc.display ? <div style={{ color: "grey" }}>{next}</div> : ""}
             </div>
@@ -124,8 +135,9 @@ export function LRCPlayer(props: {
             <audio
                 src={src}
                 controls
+                ref={audioRef}
                 style={{ width: "100%" }}
-                onTimeUpdate={ontimeupdate}
+            // onTimeUpdate={ontimeupdate}
             />
         </div>
     );

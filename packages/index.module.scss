@@ -33,7 +33,7 @@
     &-container {
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: var(--align);
         flex-direction: column;
     }
 
@@ -61,7 +61,8 @@
 
     &-header {
         display: flex;
-        align-items: center;
+        // align-items: center;
+        align-items: var(--align);
         padding-bottom: 10px;
 
         >img {
