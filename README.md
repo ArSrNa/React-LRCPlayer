@@ -2,6 +2,10 @@
 
 ![](image/README/QQ20250907-225730.png)
 
+![badge](https://cnb.cool/arsrna/os/React-LRCPlayer/-/badge/git/latest/testing/unit/coverage-pr)
+![badge](https://cnb.cool/arsrna/os/React-LRCPlayer/-/badge/git/latest/testing/unit/coverage)
+![badge](https://cnb.cool/arsrna/os/React-LRCPlayer/-/badge/git/latest/ci/status/push)
+
 ### 功能
 
 *   标题副标题显示

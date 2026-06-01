@@ -52,6 +52,7 @@ export function LRCPlayer(props: {
         offset = 0
     } = props;
     const audioRef = useRef<HTMLAudioElement>(null);
+    const animFrameRef = useRef<number>(0);
     const [current, setCurrent] = useState<string | ReactNode>(<></>);
     const [next, setNext] = useState(<></>);
     const [lrcText, setLrcText] = useState(<></>);
@@ -80,9 +81,15 @@ export function LRCPlayer(props: {
         if (audioRef.current) {
             initAnimate();
         }
+        return () => {
+            if (animFrameRef.current) {
+                cancelAnimationFrame(animFrameRef.current);
+            }
+        };
     }, [audioRef]);
 
     const initAnimate = () => {
+        if (!audioRef.current) return;
         const { currentTime } = audioRef.current;
         lrc.forEach((lyric, i1) => {
             let isCurrent = currentTime >= lrc[i1].t + offset;
@@ -107,7 +114,7 @@ export function LRCPlayer(props: {
                 );
             }
         });
-        requestAnimationFrame(initAnimate)
+        animFrameRef.current = requestAnimationFrame(initAnimate);
     };
 
     return (

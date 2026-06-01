@@ -34,13 +34,11 @@ $:
 
     coverage_test:
       docker:
-        image: node:24
+        image: docker.cnb.cool/arsrna/dev-image/nodejs
         volumes:
           - /root/.bun/install/cache
           - /root/.npm
       stages:
-        - name: 安装 bun
-          script: npm i -g bun
         - name: 测试覆盖率
           script:
             - bun i
